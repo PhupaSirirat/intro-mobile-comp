@@ -1,31 +1,41 @@
 let counter = 0
 
 const handleChange = () => {
-    let x = document.querySelectorAll(".input");
-    let input = 0;
-    if (!isNaN(x[0].value) && x[0].value > 0) {
-        input = parseInt(x[0].value);
+    let inputList = document.querySelectorAll(".input");
+    // let input1 = 0;
+    // let input2 = 0;
+    // let input3 = 0;
+    let sum = 0;
+    let i = 0
+
+    for (i = 0; i < inputList.length; i++ ) {
+
+        if (!isNaN(inputList[i].value) && parseInt(inputList[i].value) > 0) {
+        sum += parseInt(inputList[i].value);
+        }
     }
-    let input2 = 0;
-    let input3 = 0;
 
-    try {
-        x = document.getElementById(`input0`).value;
-        input2 = parseInt(x);
-        // console.log(x2);
-    }
-    catch (e) { }
+    // try {
+    //     x = document.getElementById(`input0`).value;
+    //     if (!isNaN(x) && x > 0) {
+    //         input2 = parseInt(x);
+    //     }
+    //     // console.log(x2);
+    // }
+    // catch (e) { }
 
-    try {
-        x = document.getElementById(`input1`).value;
-        input3 = parseInt(x);
-        // console.log(x2);
-    }
-    catch (e) { }
+    // try {
+    //     x = document.getElementById(`input1`).value;
+    //     if (!isNaN(x) && x > 0) {
+    //          input3 = parseInt(x);
+    //     }
+    //     // console.log(x2);
+    // }
+    // catch (e) { }
 
-    let sum = input + input2 + input3;
+    // let sum = input + input2 + input3;
 
-    document.getElementById("sum").value = sum;
+    document.getElementById("sum").value = sum.toLocaleString("en-US");
 
     let rate = 0;
     if (sum <= 150000) {
@@ -54,14 +64,49 @@ const handleChange = () => {
     }
     document.getElementById("rate").value = rate;
 
-    const tax = sum * rate / 100;
-    document.getElementById("tax").value = tax;
+//calculated taxes follow the stairs (progressive tax)
+    let tax
+    let diff
+
+    if(sum >= 5000001) {
+        diff = sum - 5000000;
+        tax = (diff * 0.35) + 1265000
+    }
+    else if (sum >= 2000001) {
+        diff = sum - 2000000;
+        tax = (diff * 0.3) + 365000
+    }
+    else if (sum >= 1000001) {
+        diff = sum - 1000000;
+        tax = (diff * 0.25) + 115000
+    }
+    else if (sum >= 750001) {
+        diff = sum - 750000;
+        tax = (diff * 0.2) + 65000
+    }
+    else if (sum >= 500001) {
+        diff = sum - 500000;
+        tax = (diff * 0.15) + 27500
+    }
+    else if (sum >= 300001) {
+        diff = sum - 300000;
+        tax = (diff * 0.1) + 7500
+    }
+    else if ( sum >= 150001) {
+        diff = sum - 150000;
+        tax = diff * 0.05;
+    }
+    else {
+        tax = 0;
+    }
+
+    document.getElementById("tax").value = tax.toLocaleString("en-US");
 }
 
 const addInputForm = () => {
     const create = document.createElement("input");
     create.type = 'number';
-    create.className = `input${counter}`;
+    create.className = `input`;
     create.id = `input${counter}`;
     create.name = 'input';
     create.addEventListener("input", handleChange);
@@ -94,3 +139,12 @@ const toggleDarkMode = () => {
         darkMode = !darkMode;
     }
 }
+
+const inputFormat = () => {
+    var removeChar =  document.getElementById("input").value.replace(/[^0-9\.]/g, '')
+    document.getElementById("input").value = removeChar
+
+    // var formatedNumber =  document.getElementById("input").value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    // document.getElementById("input").value = formatedNumber
+}
+
