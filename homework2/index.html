@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Homework 2</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <main>
+      <button id="toggleMode" onclick="toggleDarkMode()">Toggle dark mode</button>
+      <div id="main">
+        <form>
+          <label for="fname">รายได้ (บาท) </label><br />
+          <section id="inputForm">
+            <input
+              class="input"
+              type="number"
+              id="input"
+              name="input"
+              oninput="handleChange()"
+            />
+          </section>
+          <br />
+
+          <label for="lname">รายได้รวม (บาท) </label><br />
+          <input type="text" id="sum" name="sum" readonly /><br /><br />
+
+          <label for="lname">อัตราภาษี(%) </label><br />
+          <input type="text" id="rate" name="rate" readonly /><br /><br />
+
+          <label for="lname">ภาษีที่ต้องจ่าย (บาท) </label><br />
+          <input type="text" id="tax" name="tax" readonly /><br /><br />
+        </form>
+
+        <!-- <button onclick="alertMe()">Click me!</button> -->
+
+        <div>
+          <span id="plus" onclick="addInputForm()">+</span>
+          <span id="minus" onclick="removeInputForm()">-</span>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
