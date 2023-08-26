@@ -130,12 +130,12 @@ let darkMode = false;
 const toggleDarkMode = () => {
     if (!darkMode) {
         document.body.classList.add("darkMode")
-        document.getElementById('toggleMode').innerHTML = "Toggle light mode";
+        document.getElementById('toggleMode').innerHTML = "Toggle Light Mode";
         darkMode = !darkMode;
     }
     else {
         document.body.classList.remove("darkMode")
-        document.getElementById('toggleMode').innerHTML = "Toggle dark mode";
+        document.getElementById('toggleMode').innerHTML = "Toggle Dark Mode";
         darkMode = !darkMode;
     }
 }
@@ -143,6 +143,9 @@ const toggleDarkMode = () => {
 const inputFormat = () => {
     var removeChar =  document.getElementById("input").value.replace(/[^0-9\.]/g, '')
     document.getElementById("input").value = removeChar
+
+    var removeDot = document.getElementById("input").value.replace(/\./g, '')
+    document.getElementById("input").value = removeDot
 
     // var formatedNumber =  document.getElementById("input").value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
     // document.getElementById("input").value = formatedNumber
