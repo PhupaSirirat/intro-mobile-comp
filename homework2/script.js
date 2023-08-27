@@ -10,8 +10,8 @@ const handleChange = () => {
 
     for (i = 0; i < inputList.length; i++ ) {
 
-        if (!isNaN(inputList[i].value) && parseInt(inputList[i].value) > 0) {
-        sum += parseInt(inputList[i].value);
+        if (!isNaN(inputList[i].value) && parseFloat(inputList[i].value) > 0) {
+        sum += parseFloat(inputList[i].value);
         }
     }
 
@@ -144,8 +144,8 @@ const inputFormat = () => {
     var removeChar =  document.getElementById("input").value.replace(/[^0-9\.]/g, '')
     document.getElementById("input").value = removeChar
 
-    var removeDot = document.getElementById("input").value.replace(/\./g, '')
-    document.getElementById("input").value = removeDot
+    // var removeDot = document.getElementById("input").value.replace(/\./g, '')
+    // document.getElementById("input").value = removeDot
 
     // var formatedNumber =  document.getElementById("input").value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
     // document.getElementById("input").value = formatedNumber

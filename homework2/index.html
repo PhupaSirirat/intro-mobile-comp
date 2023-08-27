@@ -13,14 +13,14 @@
   </head>
   <body>
     <main>
-     <h1>โปรเเกรมคำนวณภาษีนิติบุคคล</h1>
+     <h1>โปรเเกรมคำนวณ<br>ภาษีเงินได้บุคคลธรรมดา</h1>
       <div id="main">
         <form>
           <label for="fname">รายได้ (บาท) </label><br />
           <section id="inputForm">
             <input
               class="input"
-              type="number"
+              type="text"
               id="input"
               name="input"
               oninput="handleChange(), inputFormat()"
@@ -28,21 +28,21 @@
           </section>
           <br />
 
-          <label for="lname">รายได้รวม (บาท) </label><br />
-          <input type="text" id="sum" name="sum" readonly /><br /><br />
+          <label for="lname">รายได้รวม (บาท) </label><br/>
+          <input type="text" class="input" id="sum" name="sum" readonly /><br/><br/>
 
-          <label for="lname">อัตราภาษี (%) </label><br />
-          <input type="text" id="rate" name="rate" readonly /><br /><br />
+          <label for="lname">อัตราภาษี (%) </label><br/>
+          <input type="text" class="input" id="rate" name="rate" readonly /><br/><br/>
 
-          <label for="lname">ภาษีที่ต้องจ่าย (บาท) </label><br />
-          <input type="text" id="tax" name="tax" readonly /><br /><br />
+          <label for="lname">ภาษีที่ต้องจ่าย (บาท) </label><br/>
+          <input type="text" class="input" id="tax" name="tax" readonly /><br/><br/>
         </form>
 
         <!-- <button onclick="alertMe()">Click me!</button> -->
 
         <div>
-          <span id="plus" onclick="addInputForm()">+</span>
-          <span id="minus" onclick="removeInputForm()">-</span>
+          <span class="but" id="plus" onclick="addInputForm()" alt="เพิ่มช่องรายได้">+</span>
+          <span class="but" id="minus" onclick="removeInputForm()" alt="ลดช่องรายได้">-</span>
         </div>
       </div>
       <button class="button" id="toggleMode" onclick="toggleDarkMode()">Toggle Dark Mode</button>
