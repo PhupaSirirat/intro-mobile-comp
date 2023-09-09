@@ -43,16 +43,18 @@ span {
   color: #fff;
   font-weight: 600;
   cursor: pointer;
+  position: relative;
 }
 
 .but:hover:after { 
   display: block;
   content: attr(alt);
-  width: 20rem;
-  height: 6rem;
+  width: 3rem;
+  height: 5rem;
   text-align: center;
   font-size: 10px;
   color: rgb(140, 140, 140);
+  position: absolute;
 }
 
 /* toggle */
@@ -138,6 +140,17 @@ button {
       border-radius: 0.3rem;
       border-style: none;
       background-color: #c2c2c253;
+      color: #dfd7c9;
+      padding-left: 4px;
+      border: 1px solid #1f2121;
+      box-shadow: 4px 4px 6px #343434c2, -2px -2px 4px #464646;
+    }
+
+    .display {
+      height: 1.2rem;
+      border-radius: 0.3rem;
+      border-style: none;
+      background-color: #e1e1e153;
       color: #dfd7c9;
       padding-left: 4px;
       border: 1px solid #1f2121;

@@ -1,120 +1,98 @@
 let counter = 0
 
-const handleChange = () => {
-    let inputList = document.querySelectorAll(".input");
-    // let input1 = 0;
-    // let input2 = 0;
-    // let input3 = 0;
-    let sum = 0;
-    let i = 0
+class TaxLaw {
 
-    for (i = 0; i < inputList.length; i++ ) {
+    constructor(rate, maximum) {
+        this.rate = rate;
+        this.maximum = maximum;
+    }
 
-        if (!isNaN(inputList[i].value) && parseFloat(inputList[i].value) > 0) {
-        sum += parseFloat(inputList[i].value);
+}
+
+//Tax rate rule that we can change the rule here.
+const TAX_RATE_MANIFESTO = [new TaxLaw(0, 150000),
+new TaxLaw(0.05, 300000),
+new TaxLaw(0.1, 500000),
+new TaxLaw(0.15, 750000),
+new TaxLaw(0.2, 1000000),
+new TaxLaw(0.25, 2000000),
+new TaxLaw(0.3, 5000000),
+new TaxLaw(0.35, Infinity)];
+
+const getRate = (price) => {
+    for (let i = 0; i < TAX_RATE_MANIFESTO.length; i++) {
+        let tax = TAX_RATE_MANIFESTO[i];
+        let maximum = tax.maximum;
+        if (price <= maximum) {
+            return tax.rate;
         }
     }
-
-    // try {
-    //     x = document.getElementById(`input0`).value;
-    //     if (!isNaN(x) && x > 0) {
-    //         input2 = parseInt(x);
-    //     }
-    //     // console.log(x2);
-    // }
-    // catch (e) { }
-
-    // try {
-    //     x = document.getElementById(`input1`).value;
-    //     if (!isNaN(x) && x > 0) {
-    //          input3 = parseInt(x);
-    //     }
-    //     // console.log(x2);
-    // }
-    // catch (e) { }
-
-    // let sum = input + input2 + input3;
-
-    document.getElementById("sum").value = sum.toLocaleString("en-US");
-
-    let rate = 0;
-    if (sum <= 150000) {
-        rate = 0;
-    }
-    else if (sum <= 300000) {
-        rate = 5;
-    }
-    else if (sum <= 500000) {
-        rate = 10;
-    }
-    else if (sum <= 750000) {
-        rate = 15;
-    }
-    else if (sum <= 1000000) {
-        rate = 20;
-    }
-    else if (sum <= 2000000) {
-        rate = 25;
-    }
-    else if (sum <= 5000000) {
-        rate = 30;
-    }
-    else {
-        rate = 35;
-    }
-    document.getElementById("rate").value = rate;
+}
 
 //calculated taxes follow the stairs (progressive tax)
-    let tax
-    let diff
+const progressiveTax = (price) => {
+    let totalTax = 0;
+    let rate = 0;
+    for (let i = 0; i < TAX_RATE_MANIFESTO.length; i++) {
+        let iTax = TAX_RATE_MANIFESTO[i];
+        let iRate = iTax.rate;
+        let iMax = iTax.maximum;
+        let cropPrice = price;
+        if (i >= 1) {
+            let prevTax = TAX_RATE_MANIFESTO[i - 1];
+            let prevMax = prevTax.maximum;
+            cropPrice -= prevMax;
+        }
+        if (price > iMax) {
+            cropPrice += iMax - price;
+        }
+        else {
+            totalTax += iRate * cropPrice;
+            return {tax:totalTax, rate:iRate};
+        }
+        totalTax += iRate * cropPrice;
+    }
+    lastTaxPos = TAX_RATE_MANIFESTO.length;
+    return {tax:totalTax, rate:TAX_RATE_MANIFESTO[lastTaxPos].rate};
+}
 
-    if(sum >= 5000001) {
-        diff = sum - 5000000;
-        tax = (diff * 0.35) + 1265000
+//Return sum of each element value (make sure the element has a number value!).
+const getSumOf = (eLst) => {
+    let lstNum = eLst.length;
+    let sum = 0;
+    for (let i = 0; i < lstNum; i++) {
+        if (!isNaN(eLst[i].value) && parseFloat(eLst[i].value) > 0) {
+            sum += parseFloat(eLst[i].value);
+        }
     }
-    else if (sum >= 2000001) {
-        diff = sum - 2000000;
-        tax = (diff * 0.3) + 365000
-    }
-    else if (sum >= 1000001) {
-        diff = sum - 1000000;
-        tax = (diff * 0.25) + 115000
-    }
-    else if (sum >= 750001) {
-        diff = sum - 750000;
-        tax = (diff * 0.2) + 65000
-    }
-    else if (sum >= 500001) {
-        diff = sum - 500000;
-        tax = (diff * 0.15) + 27500
-    }
-    else if (sum >= 300001) {
-        diff = sum - 300000;
-        tax = (diff * 0.1) + 7500
-    }
-    else if ( sum >= 150001) {
-        diff = sum - 150000;
-        tax = diff * 0.05;
-    }
-    else {
-        tax = 0;
-    }
+    return sum
+}
 
+//just calculate the inputs and show the result about tax
+const handleChange = () => {
+    let inputList = document.querySelectorAll(".input");
+    let sum = getSumOf(inputList);
+    const taxNrate = progressiveTax(sum);
+    let rate = taxNrate.rate;
+    let tax = taxNrate.tax;
+
+    document.getElementById("sum").value = sum.toLocaleString("en-US");
+    document.getElementById("rate").value = rate;
     document.getElementById("tax").value = tax.toLocaleString("en-US");
 }
 
 const addInputForm = () => {
     const create = document.createElement("input");
-    create.type = 'number';
+    create.type = 'text';
     create.className = `input`;
     create.id = `input${counter}`;
     create.name = 'input';
     create.addEventListener("input", handleChange);
+    create.addEventListener("input", inputFormat);
 
     if (counter < 2) {
         document.getElementById("inputForm").appendChild(create);
         counter++;
-        // console.log(document.getElementById("inputForm"));
     }
 }
 
@@ -141,13 +119,19 @@ const toggleDarkMode = () => {
 }
 
 const inputFormat = () => {
-    var removeChar =  document.getElementById("input").value.replace(/[^0-9\.]/g, '')
-    document.getElementById("input").value = removeChar
+    // var removeChar =  document.getElementById("input").value.replace(/[^0-9\.]/g, '')
+    // document.getElementById("input").value = removeChar
+    const inputEle = document.getElementsByClassName("input");
+    for (let i = 0; i < inputEle.length; i++ ) {
+        ele = inputEle[i];
+        if (isNaN(ele.value)) {
+            triggerWarning()
+            ele.value = ""
+        }
+    }
+}
 
-    // var removeDot = document.getElementById("input").value.replace(/\./g, '')
-    // document.getElementById("input").value = removeDot
-
-    // var formatedNumber =  document.getElementById("input").value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-    // document.getElementById("input").value = formatedNumber
+const triggerWarning = () => {
+    alert("Input is NaN!")
 }
 

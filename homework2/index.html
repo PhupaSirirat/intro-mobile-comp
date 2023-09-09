@@ -5,15 +5,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-  <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-    <link href="https://fonts.googleapis.com/css2?family=Athiti&family=Karla:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Athiti&family=Karla:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
 
     <script src="script.js"></script>
   </head>
   <body>
     <main>
-     <h1>โปรเเกรมคำนวณ<br>ภาษีเงินได้บุคคลธรรมดา</h1>
+      <h1>โปรเเกรมคำนวณ<br />ภาษีเงินได้บุคคลธรรมดา</h1>
       <div id="main">
         <form>
           <label for="fname">รายได้ (บาท) </label><br />
@@ -28,24 +31,56 @@
           </section>
           <br />
 
-          <label for="lname">รายได้รวม (บาท) </label><br/>
-          <input type="text" class="input" id="sum" name="sum" readonly /><br/><br/>
+          <label for="lname">รายได้รวม (บาท) </label><br />
+          <input
+            type="text"
+            class="display"
+            id="sum"
+            name="sum"
+            readonly
+          /><br /><br />
 
-          <label for="lname">อัตราภาษี (%) </label><br/>
-          <input type="text" class="input" id="rate" name="rate" readonly /><br/><br/>
+          <label for="lname">อัตราภาษี (%) </label><br />
+          <input
+            type="text"
+            class="display"
+            id="rate"
+            name="rate"
+            readonly
+          /><br /><br />
 
-          <label for="lname">ภาษีที่ต้องจ่าย (บาท) </label><br/>
-          <input type="text" class="input" id="tax" name="tax" readonly /><br/><br/>
+          <label for="lname">ภาษีที่ต้องจ่าย (บาท) </label><br />
+          <input
+            type="text"
+            class="display"
+            id="tax"
+            name="tax"
+            readonly
+          /><br /><br />
         </form>
 
         <!-- <button onclick="alertMe()">Click me!</button> -->
 
         <div>
-          <span class="but" id="plus" onclick="addInputForm()" alt="เพิ่มช่องรายได้">+</span>
-          <span class="but" id="minus" onclick="removeInputForm()" alt="ลดช่องรายได้">-</span>
+          <span
+            class="but"
+            id="plus"
+            onclick="addInputForm()"
+            alt="เพิ่มช่องรายได้"
+            >+</span
+          >
+          <span
+            class="but"
+            id="minus"
+            onclick="removeInputForm()"
+            alt="ลดช่องรายได้"
+            >-</span
+          >
         </div>
       </div>
-      <button class="button" id="toggleMode" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+      <button class="button" id="toggleMode" onclick="toggleDarkMode()">
+        Toggle Dark Mode
+      </button>
     </main>
   </body>
 </html>
