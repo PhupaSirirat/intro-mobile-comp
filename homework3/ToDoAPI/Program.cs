@@ -23,3 +23,10 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+public partial class Program
+{
+    //random string for security key (length = 32)
+    public static string SecurityKey = "EphstmuEY36ahkJtKqOpNnThK4Oyf8Qn";
+    public static string Issuer = "";
+}

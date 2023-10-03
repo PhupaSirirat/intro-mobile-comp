@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Ji9tgbM2y8JsnIAVwsC+uQpZC+nmvPYHy7CelE0smuIDe3QVp+WzewY7PkBwwpwp5ZAaRMXwaA7VErGkKOaUOQ==",
+  "dgSpecHash": "wvtdoYVVXARGPDSHJ74mpxKev0EBSBD7+6DgH6Uzq0RhZpnc5NoCD51GH5dBA4M4byEf6EqvMJW7X64D5EShAw==",
   "success": true,
   "projectFilePath": "/Users/tada/Library/Mobile Documents/com~apple~CloudDocs/Uni workspace/2301466mobile/mobile-computing/homework3/ToDoAPI/ToDoAPI.csproj",
   "expectedPackageFiles": [
@@ -24,6 +24,10 @@
     "/Users/tada/.nuget/packages/microsoft.extensions.logging.abstractions/7.0.0/microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
     "/Users/tada/.nuget/packages/microsoft.extensions.options/7.0.0/microsoft.extensions.options.7.0.0.nupkg.sha512",
     "/Users/tada/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "/Users/tada/.nuget/packages/microsoft.identitymodel.abstractions/7.0.2/microsoft.identitymodel.abstractions.7.0.2.nupkg.sha512",
+    "/Users/tada/.nuget/packages/microsoft.identitymodel.jsonwebtokens/7.0.2/microsoft.identitymodel.jsonwebtokens.7.0.2.nupkg.sha512",
+    "/Users/tada/.nuget/packages/microsoft.identitymodel.logging/7.0.2/microsoft.identitymodel.logging.7.0.2.nupkg.sha512",
+    "/Users/tada/.nuget/packages/microsoft.identitymodel.tokens/7.0.2/microsoft.identitymodel.tokens.7.0.2.nupkg.sha512",
     "/Users/tada/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
     "/Users/tada/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
     "/Users/tada/.nuget/packages/mysqlconnector/2.2.5/mysqlconnector.2.2.5.nupkg.sha512",
@@ -33,6 +37,7 @@
     "/Users/tada/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
     "/Users/tada/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
     "/Users/tada/.nuget/packages/system.codedom/4.4.0/system.codedom.4.4.0.nupkg.sha512",
+    "/Users/tada/.nuget/packages/system.identitymodel.tokens.jwt/7.0.2/system.identitymodel.tokens.jwt.7.0.2.nupkg.sha512",
     "/Users/tada/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
     "/Users/tada/.nuget/packages/system.text.json/7.0.0/system.text.json.7.0.0.nupkg.sha512"
   ],

@@ -43,3 +43,8 @@
 /Users/tada/Library/Mobile Documents/com~apple~CloudDocs/Uni workspace/2301466mobile/mobile-computing/homework3/ToDoAPI/bin/Debug/net7.0/MySqlConnector.dll
 /Users/tada/Library/Mobile Documents/com~apple~CloudDocs/Uni workspace/2301466mobile/mobile-computing/homework3/ToDoAPI/bin/Debug/net7.0/Pomelo.EntityFrameworkCore.MySql.dll
 /Users/tada/Library/Mobile Documents/com~apple~CloudDocs/Uni workspace/2301466mobile/mobile-computing/homework3/ToDoAPI/bin/Debug/net7.0/System.CodeDom.dll
+/Users/tada/Library/Mobile Documents/com~apple~CloudDocs/Uni workspace/2301466mobile/mobile-computing/homework3/ToDoAPI/bin/Debug/net7.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/tada/Library/Mobile Documents/com~apple~CloudDocs/Uni workspace/2301466mobile/mobile-computing/homework3/ToDoAPI/bin/Debug/net7.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/tada/Library/Mobile Documents/com~apple~CloudDocs/Uni workspace/2301466mobile/mobile-computing/homework3/ToDoAPI/bin/Debug/net7.0/Microsoft.IdentityModel.Logging.dll
+/Users/tada/Library/Mobile Documents/com~apple~CloudDocs/Uni workspace/2301466mobile/mobile-computing/homework3/ToDoAPI/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
+/Users/tada/Library/Mobile Documents/com~apple~CloudDocs/Uni workspace/2301466mobile/mobile-computing/homework3/ToDoAPI/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll
