@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "k+iDNfmxsmo1NVarhI6wHfiI6IevwyuVl71v50DcPl5oQSfViFAxM5B4QJchI+LzQ3aSXfDtZ3oZ5Jgf8edYqA==",
+  "success": true,
+  "projectFilePath": "/Users/tada/Library/Mobile Documents/com~apple~CloudDocs/Uni workspace/2301466mobile/mobile-computing/homework3/ToDoAPI/ToDoAPI.csproj",
+  "expectedPackageFiles": [
+    "/Users/tada/.nuget/packages/microsoft.aspnetcore.openapi/7.0.10/microsoft.aspnetcore.openapi.7.0.10.nupkg.sha512",
+    "/Users/tada/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/Users/tada/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
+    "/Users/tada/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "/Users/tada/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "/Users/tada/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "/Users/tada/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
