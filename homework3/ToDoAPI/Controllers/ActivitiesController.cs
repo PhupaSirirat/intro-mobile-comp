@@ -1,13 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using ToDoAPI.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.VisualBasic;
-
-
 
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using System.Reflection.Metadata.Ecma335;
 
 namespace ToDoAPI.Controllers;
 
@@ -28,7 +24,6 @@ public class ActivitiesController : ControllerBase
     {
         ToDoDbContext db = new ToDoDbContext();
         string userName = getUserName();
-        return Ok(new { name = userName });
 
         IQueryable<Activity> activities = from a in db.Activity select a;
         activities = activities.Where(act => act.UserId.Equals(userName));
@@ -40,25 +35,31 @@ public class ActivitiesController : ControllerBase
 
     [Route("{id}")]
     [HttpGet]
+    [Authorize(Roles = "user")]
     public IActionResult Get(uint id)
     {
         ToDoDbContext db = new ToDoDbContext();
+        string userName = getUserName();
+        IQueryable<Activity> activities = from a in db.Activity select a;
+        activities = activities.Where(act => act.UserId.Equals(userName));
+        activities = activities.Where(act => act.Id.Equals(id));
 
-        Activity activity = db.Activity.Find(id);
-        if (activity == null) return NotFound(new { detail = "can't find activity id: " + id });
+        if (activities == null) return NotFound(new { detail = "can't find activity id: " + id });
 
-        return Ok(activity);
+        return Ok(activities.FirstOrDefault());
     }
 
     [HttpPost]
+    [Authorize(Roles = "user")]
     public IActionResult Post([FromBody] DTOs.Activity data)
     {
         ToDoDbContext db = new ToDoDbContext();
+        string userName = getUserName();
 
         Activity activity = new Models.Activity();
         activity.Name = data.name;
         activity.Appoint = data.appoint;
-        activity.UserId = data.userId;
+        activity.UserId = userName;
 
         db.Activity.Add(activity);
         db.SaveChanges();
@@ -68,10 +69,15 @@ public class ActivitiesController : ControllerBase
 
     [Route("{id}")]
     [HttpPut]
+    [Authorize(Roles = "user")]
     public IActionResult Put(uint id, [FromBody] DTOs.Activity data)
     {
         ToDoDbContext db = new ToDoDbContext();
-        Activity activity = db.Activity.Find(id);
+        string userName = getUserName();
+        IQueryable<Activity> activities = from a in db.Activity select a;
+        activities = activities.Where(act => act.UserId.Equals(userName));
+        activities = activities.Where(act => act.Id.Equals(id));
+        Activity activity = activities.FirstOrDefault();
         activity.Name = data.name;
         activity.Appoint = data.appoint;
 
@@ -82,10 +88,16 @@ public class ActivitiesController : ControllerBase
 
     [Route("{id}")]
     [HttpDelete]
+    [Authorize(Roles = "user")]
     public IActionResult Delete(uint id)
     {
         ToDoDbContext db = new ToDoDbContext();
-        Activity activity = db.Activity.Find(id);
+        string userName = getUserName();
+        IQueryable<Activity> activities = from a in db.Activity select a;
+        activities = activities.Where(act => act.UserId.Equals(userName));
+        activities = activities.Where(act => act.Id.Equals(id));
+
+        Activity activity = activities.FirstOrDefault();
 
         db.Activity.Remove(activity);
         db.SaveChanges();
@@ -96,22 +108,8 @@ public class ActivitiesController : ControllerBase
     private string getUserName()
     {
         // Get the Authorization header from the HTTP request
-        string authorizationHeader = HttpContext.Request.Headers["Authorization"].FirstOrDefault();
-
-        // Check if the header is present and starts with "Bearer "
-        if (!string.IsNullOrEmpty(authorizationHeader) && authorizationHeader.StartsWith("Bearer "))
-        {
-            // Extract the token (removing "Bearer " prefix)
-            string tokenText = authorizationHeader.Substring("Bearer ".Length);
-
-            // Now, 'token' contains the actual Bearer token
-            var handler = new JwtSecurityTokenHandler();
-            var token = handler.ReadJwtToken(tokenText);
-
-            // Access claims from the token
-            return token.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
-        }
-        throw new Exception("the token is null or header does not start with bearer");
-
+        ClaimsIdentity identity = HttpContext.User.Identity as ClaimsIdentity;
+        var a = identity.FindFirst(ClaimTypes.Name).Value;
+        return a;
     }
 }
