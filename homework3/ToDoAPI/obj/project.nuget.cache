@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "wvtdoYVVXARGPDSHJ74mpxKev0EBSBD7+6DgH6Uzq0RhZpnc5NoCD51GH5dBA4M4byEf6EqvMJW7X64D5EShAw==",
+  "dgSpecHash": "aclebUZ+vfTQEZYn+FmPq0r41o4NxA92N9Nmz31K4MEFNEJa72svaTaN1QUYv2sjL2E8jWdEOKRgm9WA7yA1Jw==",
   "success": true,
-  "projectFilePath": "/Users/tada/Library/Mobile Documents/com~apple~CloudDocs/Uni workspace/2301466mobile/mobile-computing/homework3/ToDoAPI/ToDoAPI.csproj",
+  "projectFilePath": "/Users/tada/Library/Mobile Documents/com~apple~CloudDocs/Uni workspace/2301466mobile/intro-mobile-comp/homework3/ToDoAPI/ToDoAPI.csproj",
   "expectedPackageFiles": [
     "/Users/tada/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
+    "/Users/tada/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/7.0.11/microsoft.aspnetcore.authentication.jwtbearer.7.0.11.nupkg.sha512",
     "/Users/tada/.nuget/packages/microsoft.aspnetcore.cryptography.internal/7.0.11/microsoft.aspnetcore.cryptography.internal.7.0.11.nupkg.sha512",
     "/Users/tada/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/7.0.11/microsoft.aspnetcore.cryptography.keyderivation.7.0.11.nupkg.sha512",
     "/Users/tada/.nuget/packages/microsoft.aspnetcore.openapi/7.0.10/microsoft.aspnetcore.openapi.7.0.10.nupkg.sha512",
@@ -27,6 +28,8 @@
     "/Users/tada/.nuget/packages/microsoft.identitymodel.abstractions/7.0.2/microsoft.identitymodel.abstractions.7.0.2.nupkg.sha512",
     "/Users/tada/.nuget/packages/microsoft.identitymodel.jsonwebtokens/7.0.2/microsoft.identitymodel.jsonwebtokens.7.0.2.nupkg.sha512",
     "/Users/tada/.nuget/packages/microsoft.identitymodel.logging/7.0.2/microsoft.identitymodel.logging.7.0.2.nupkg.sha512",
+    "/Users/tada/.nuget/packages/microsoft.identitymodel.protocols/6.15.1/microsoft.identitymodel.protocols.6.15.1.nupkg.sha512",
+    "/Users/tada/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/6.15.1/microsoft.identitymodel.protocols.openidconnect.6.15.1.nupkg.sha512",
     "/Users/tada/.nuget/packages/microsoft.identitymodel.tokens/7.0.2/microsoft.identitymodel.tokens.7.0.2.nupkg.sha512",
     "/Users/tada/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
     "/Users/tada/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",

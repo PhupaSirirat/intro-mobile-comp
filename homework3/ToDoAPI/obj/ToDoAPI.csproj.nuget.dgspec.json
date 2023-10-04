@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/tada/Library/Mobile Documents/com~apple~CloudDocs/Uni workspace/2301466mobile/mobile-computing/homework3/ToDoAPI/ToDoAPI.csproj": {}
+    "/Users/tada/Library/Mobile Documents/com~apple~CloudDocs/Uni workspace/2301466mobile/intro-mobile-comp/homework3/ToDoAPI/ToDoAPI.csproj": {}
   },
   "projects": {
-    "/Users/tada/Library/Mobile Documents/com~apple~CloudDocs/Uni workspace/2301466mobile/mobile-computing/homework3/ToDoAPI/ToDoAPI.csproj": {
+    "/Users/tada/Library/Mobile Documents/com~apple~CloudDocs/Uni workspace/2301466mobile/intro-mobile-comp/homework3/ToDoAPI/ToDoAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tada/Library/Mobile Documents/com~apple~CloudDocs/Uni workspace/2301466mobile/mobile-computing/homework3/ToDoAPI/ToDoAPI.csproj",
+        "projectUniqueName": "/Users/tada/Library/Mobile Documents/com~apple~CloudDocs/Uni workspace/2301466mobile/intro-mobile-comp/homework3/ToDoAPI/ToDoAPI.csproj",
         "projectName": "ToDoAPI",
-        "projectPath": "/Users/tada/Library/Mobile Documents/com~apple~CloudDocs/Uni workspace/2301466mobile/mobile-computing/homework3/ToDoAPI/ToDoAPI.csproj",
+        "projectPath": "/Users/tada/Library/Mobile Documents/com~apple~CloudDocs/Uni workspace/2301466mobile/intro-mobile-comp/homework3/ToDoAPI/ToDoAPI.csproj",
         "packagesPath": "/Users/tada/.nuget/packages/",
-        "outputPath": "/Users/tada/Library/Mobile Documents/com~apple~CloudDocs/Uni workspace/2301466mobile/mobile-computing/homework3/ToDoAPI/obj/",
+        "outputPath": "/Users/tada/Library/Mobile Documents/com~apple~CloudDocs/Uni workspace/2301466mobile/intro-mobile-comp/homework3/ToDoAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/tada/.nuget/NuGet/NuGet.Config"
@@ -38,6 +38,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
             "Microsoft.AspNetCore.Cryptography.KeyDerivation": {
               "target": "Package",
               "version": "[7.0.11, )"
