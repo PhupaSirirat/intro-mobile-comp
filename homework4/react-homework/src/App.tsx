@@ -1,18 +1,11 @@
 import "./App.css";
-import Header from "./components/Header";
-import Content from "./components/Content";
-import Footer from "./components/Footer";
 
 function App() {
-  const a = ["orange", "apple", "mango"];
-  const b = ["ant", "bird", "cat"];
   return(
-    <>
-      <Header />
-      <Content content={a}/>
-      <Content content={b}/>
-      <Footer />
-    </>
+    <main className="container">
+      <a href="/homework4">Homework 4</a>
+      <a href="/homework5">Homework 5</a>
+    </main>
   );
 }
 
