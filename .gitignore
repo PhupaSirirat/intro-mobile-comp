@@ -2,3 +2,4 @@
 test/**
 .DS_Store
 TodoAPI/**
+WebApp-ToDo/node_modules
